@@ -36,8 +36,7 @@ function Counter({ value, suffix }) {
     </span>
   );
 }
-
-const Hero = () => {
+const Hero = ({ setCurrentPage }) => {
   return (
     <section
       id="home"
@@ -126,18 +125,18 @@ const Hero = () => {
               >
                 Demander un devis
               </motion.a>
-
-              <motion.button
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="group px-8 py-4 rounded-xl border border-slate-300 bg-white/80 backdrop-blur-sm text-slate-800 font-bold flex items-center gap-3 hover:border-[#109DA2] hover:bg-white transition-all duration-300 shadow-sm"
-              >
-                Voir nos réalisations
-                <ArrowUpRight
-                  size={18}
-                  className="text-slate-500 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#109DA2]"
-                />
-              </motion.button>
+<motion.button
+  onClick={() => setCurrentPage("creations")}
+  whileHover={{ scale: 1.03, y: -2 }}
+  whileTap={{ scale: 0.97 }}
+  className="group px-8 py-4 rounded-xl border border-slate-300 bg-white/80 backdrop-blur-sm text-slate-800 font-bold flex items-center gap-3 hover:border-[#109DA2] hover:bg-white transition-all duration-300 shadow-sm"
+>
+  Voir nos réalisations
+  <ArrowUpRight
+    size={18}
+    className="text-slate-500 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#109DA2]"
+  />
+</motion.button>
             </div>
 
             {/* Stats Counter Row */}

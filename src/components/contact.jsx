@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -26,6 +27,37 @@ export default function Contact() {
     }
   };
 
+  const [form, setForm] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  subject: "",
+  message: "",
+});
+
+const handleChange = (e) => {
+  setForm({
+    ...form,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleWhatsApp = () => {
+  const text = `Bonjour,
+
+Nom : ${form.name}
+Email : ${form.email}
+Téléphone : ${form.phone}
+Sujet : ${form.subject}
+
+Message :
+${form.message}`;
+
+  window.open(
+    `https://wa.me/213776362308?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+};
   return (
     <section className="bg-[#FAF7F2] py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -67,7 +99,7 @@ export default function Contact() {
 
             <div className="space-y-5">
               {[
-                { icon: Phone, title: "Téléphone", desc: ["+213 (0) 555 123 456", "+213 (0) 661 987 654"] },
+                { icon: Phone, title: "Téléphone", desc: ["+213 (0) 776362308"] },
                 { icon: Mail, title: "Email", desc: ["contact@abtouch.dz"] },
                 { icon: MapPin, title: "Adresse", desc: ["Les Platanes,", "Commune Filfila, Skikda, Algérie"] },
                 { icon: Clock, title: "Horaires", desc: ["Lun - Jeu : 08:30 - 18:00", "Sam : 08:30 - 13:00"] }
@@ -110,20 +142,29 @@ export default function Contact() {
             <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
               <div className="relative">
                 <input
-                  type="text"
-                  placeholder="Nom complet"
-                  className="w-full bg-slate-50 border border-gray-200 rounded-xl px-5 py-3.5 outline-none transition-all focus:bg-white focus:border-[#0D8B8B] focus:ring-2 focus:ring-[#0D8B8B]/10 text-slate-800"
-                />
+  type="text"
+  name="name"
+  value={form.name}
+  onChange={handleChange}
+  placeholder="Nom complet"
+  className="..."
+/>
               </div>
 
               <div className="grid md:grid-cols-2 gap-5">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full bg-slate-50 border border-gray-200 rounded-xl px-5 py-3.5 outline-none transition-all focus:bg-white focus:border-[#0D8B8B] focus:ring-2 focus:ring-[#0D8B8B]/10 text-slate-800"
-                />
+               <input
+  type="email"
+  name="email"
+  value={form.email}
+  onChange={handleChange}
+  placeholder="Email"
+  className="..."
+/>
                 <input
                   type="text"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
                   placeholder="Téléphone"
                   className="w-full bg-slate-50 border border-gray-200 rounded-xl px-5 py-3.5 outline-none transition-all focus:bg-white focus:border-[#0D8B8B] focus:ring-2 focus:ring-[#0D8B8B]/10 text-slate-800"
                 />
@@ -131,17 +172,25 @@ export default function Contact() {
 
               <input
                 type="text"
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
                 placeholder="Sujet"
                 className="w-full bg-slate-50 border border-gray-200 rounded-xl px-5 py-3.5 outline-none transition-all focus:bg-white focus:border-[#0D8B8B] focus:ring-2 focus:ring-[#0D8B8B]/10 text-slate-800"
               />
 
               <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 rows="5"
                 placeholder="Votre message..."
                 className="w-full bg-slate-50 border border-gray-200 rounded-xl px-5 py-3.5 outline-none transition-all focus:bg-white focus:border-[#0D8B8B] focus:ring-2 focus:ring-[#0D8B8B]/10 text-slate-800 resize-none"
               />
 
               <motion.button
+  type="button"
+  onClick={handleWhatsApp}
                 whileHover={{ scale: 1.02, backgroundColor: "#0A7272" }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-[#0D8B8B] text-white font-bold rounded-xl py-4 flex justify-center items-center gap-2 shadow-md transition-colors"

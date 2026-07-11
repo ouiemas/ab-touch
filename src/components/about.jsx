@@ -216,13 +216,19 @@ export default function About() {
             </p>
           </div>
 
-          <motion.button 
-            whileHover={{ scale: 1.02, backgroundColor: "#0d878c" }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-[#109DA2] text-white font-semibold px-7 py-3.5 rounded-lg shadow-md transition-all duration-200 shrink-0 tracking-wide text-sm"
-          >
-            Demander un devis
-          </motion.button>
+          <a
+  href="https://wa.me/213770123456."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <motion.button
+    whileHover={{ scale: 1.02, backgroundColor: "#0d878c" }}
+    whileTap={{ scale: 0.98 }}
+    className="bg-[#109DA2] text-white font-semibold px-7 py-3.5 rounded-lg shadow-md transition-all duration-200 shrink-0 tracking-wide text-sm"
+  >
+    Demander un devis
+  </motion.button>
+</a>
         </motion.div>
 
       </div>
