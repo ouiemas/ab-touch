@@ -41,7 +41,7 @@ const Hero = ({ setCurrentPage }) => {
   return (
     <section
       id="home"
-      className="relative bg-[#F8F4EC] overflow-hidden min-h-screen lg:min-h-[88vh] flex items-center"
+      className="relative bg-[#F8F4EC] overflow-hidden min-h-screen lg:min-h-[88vh] flex items-center pt-20 lg:pt-0"
     >
       {/* Background/Right Image Layer */}
       <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 z-0 opacity-20 lg:opacity-100">

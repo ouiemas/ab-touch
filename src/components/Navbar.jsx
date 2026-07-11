@@ -43,10 +43,10 @@ const Navbar = ({ setCurrentPage, currentPage }) => {
   className="absolute left-6 flex items-center gap-2 group bg-transparent border-none outline-none"
 >
   <img
-    src="/logo.png"
-    alt="AB TOUCH"
-    className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
-  />
+  src="/logo.png"
+  alt="AB TOUCH"
+  className="h-10 sm:h-12 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+/>
 </button>
 
         {/* Desktop Navigation */}
