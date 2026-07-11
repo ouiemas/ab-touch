@@ -64,7 +64,7 @@ function App() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="text-3xl font-black tracking-wider">
-                AB <span className="text-green-500">TOUCH</span>
+                AB <span className="text-white">TOUCH</span>
               </h2>
 
               <p className="mt-4 max-w-md text-gray-400 leading-7">
